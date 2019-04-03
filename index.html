@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+  <script>
+    function computerPlay() {
+          let arr = ['rock', 'paper', 'scissors'];
+          let randomNumber = Math.floor(Math.random()*arr.length);
+
+          return arr[randomNumber];
+        }
+
+        function playRound (playerSelection, computerSelection) {
+          let playerLowerCase = playerSelection.toLowerCase();
+
+          if (playerLowerCase === computerSelection) {
+            return "You picked " + playerLowerCase + " and the computer selected " + computerSelection + ". It's a tie!";
+          } else if  (playerLowerCase == 'rock' && computerSelection == 'scissors') {
+             return  "You picked rock and the computer picked scissors. You win!";
+          } else if  (playerLowerCase == 'rock' && computerSelection == 'paper') {
+             return "You picked rock and the computer picked paper. You lose!";
+          } else if (playerLowerCase == 'scissors' && computerSelection == 'paper') {
+             return "You picked scissors and the computer picked paper. You win!";
+          } else if (playerLowerCase == 'scissors' && computerSelection == 'rock') {
+             return "You picked scissors and the computer picked rock. You lose!";
+          } else if (playerLowerCase == 'paper' && computerSelection == 'rock') {
+             return "You picked paper and the computer picked rock. You win!";
+          } else {
+             return "You picked paper and the computer picked scissors. You lose!";
+          }
+        }
+
+        playRound('scissors', computerPlay())
+
+
+  </script>
+</body>
+</html>
